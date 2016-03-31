@@ -1,31 +1,65 @@
-public class ALStack{
+//Team MadStax -- Shanjeed Ali and Gabriel Marks
+//APCS2 pd10
+//HW22 -- Standardization
+//2016-03-31
 
-    private T [] _stack;
+import java.util.ArrayList;
+
+public class ALStack<T> implements Stack<T>{
+
+    private ArrayList<T> _stack;
     private int _stackSize;
 
-
     //constructor
-    public Latkes() 
-	{ 
-	    //typecasting hard to avoid here:
-	    _stack = ( T[] )new Object[42]; 
-	    //...
+    public ALStack() { 
+	_stack = new ArrayList<T>(42); 
     }
 
 
     //overloaded constructor allows for intial capacity declaration
-    public Latkes( int size ) 
-	{ 
-
+    public ALStack( int size ) { 
+	_stack = new ArrayList<T>(size);
     }
 
+    //insert
+    public void push( T s){
+	_stack.add(s);
+	_stackSize++;
+    }
+
+    //remove
+    public T pop(){
+	if (isEmpty())
+	    return null;
+	T ret = _stack.get(_stack.size()-1);
+	_stack.remove(_stack.size()-1);
+	_stackSize--;
+	return ret;
+    }
+
+    public T peek(){
+	if(isEmpty())
+	    return null;
+	return _stack.get(_stack.size()-1);
+    }
+
+    //chk for emptiness
+    public boolean isEmpty() 
+    { 
+	return _stackSize == 0; 
+    }
+
+    //chk for fullness
+    public boolean isFull() {
+	return _stackSize >= _stack.size(); 
+    }
 
     //main method for testing
     public static void main( String[] args ) {
 
-	/*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 
-	Latkes<String> tastyStack = new Latkes<String>(10);
+
+	ALStack tastyStack = new ALStack(10);
 
 	tastyStack.push("aoo");
 	tastyStack.push("boo");
@@ -81,6 +115,8 @@ public class ALStack{
 	System.out.println( "peek: " + tastyStack.peek() );
 	System.out.println( "pop: " + tastyStack.pop() );
 	System.out.println( tastyStack.pop() );
+
+	/*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
           ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
     }//end main()
 
