@@ -1,3 +1,8 @@
+//Team MadStax -- Shanjeed Ali and Gabriel Marks
+//APCS2 pd10
+//HW22 -- Standardization
+//2016-03-31
+
 /*****************************************************
  * skeleton for class Latkes
  * Implements a stack of Strings using an array as underlying container.

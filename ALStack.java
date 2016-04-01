@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*****************************************************
  * class ALStack
  * Implements ADT Stack, generically typed.
@@ -5,7 +6,19 @@
  *****************************************************/
 
 import java.util.ArrayList;
+=======
+//Team MadStax -- Shanjeed Ali and Gabriel Marks
+//APCS2 pd10
+//HW22 -- Standardization
+//2016-03-31
 
+import java.util.ArrayList;
+
+public class ALStack<T> implements Stack<T>{
+>>>>>>> f2b602a8c117c24f64102ffdefe9ab7167d5944e
+
+    private ArrayList<T> _stack;
+    private int _stackSize;
 
 public class ALStack<T> implements Stack<T> {
 
@@ -13,6 +26,7 @@ public class ALStack<T> implements Stack<T> {
 
     //constructor
     public ALStack() { 
+<<<<<<< HEAD
 	_stack = new ArrayList<T>();
     }
 
@@ -40,8 +54,49 @@ public class ALStack<T> implements Stack<T> {
 	if ( isEmpty() )  return null;
 	retVal = _stack.remove( _stack.size()-1 );
 	return retVal;
+=======
+	_stack = new ArrayList<T>(42); 
     }
 
+
+    //overloaded constructor allows for intial capacity declaration
+    public ALStack( int size ) { 
+	_stack = new ArrayList<T>(size);
+    }
+
+    //insert
+    public void push( T s){
+	_stack.add(s);
+	_stackSize++;
+>>>>>>> f2b602a8c117c24f64102ffdefe9ab7167d5944e
+    }
+
+    //remove
+    public T pop(){
+	if (isEmpty())
+	    return null;
+	T ret = _stack.get(_stack.size()-1);
+	_stack.remove(_stack.size()-1);
+	_stackSize--;
+	return ret;
+    }
+
+    public T peek(){
+	if(isEmpty())
+	    return null;
+	return _stack.get(_stack.size()-1);
+    }
+
+    //chk for emptiness
+    public boolean isEmpty() 
+    { 
+	return _stackSize == 0; 
+    }
+
+    //chk for fullness
+    public boolean isFull() {
+	return _stackSize >= _stack.size(); 
+    }
 
     //chk for emptiness
     public boolean isEmpty() { 	return _stack.size() == 0;  }
@@ -50,7 +105,13 @@ public class ALStack<T> implements Stack<T> {
     //main method for testing
     public static void main( String[] args ) {
 
+<<<<<<< HEAD
 	Stack<String> tastyStack = new ALStack<String>();
+=======
+
+
+	ALStack tastyStack = new ALStack(10);
+>>>>>>> f2b602a8c117c24f64102ffdefe9ab7167d5944e
 
 	tastyStack.push("aoo");
 	tastyStack.push("boo");
@@ -106,6 +167,13 @@ public class ALStack<T> implements Stack<T> {
 	System.out.println( "peek: " + tastyStack.peek() );
 	System.out.println( "pop: " + tastyStack.pop() );
 	System.out.println( tastyStack.pop() );
+<<<<<<< HEAD
     }
+=======
+
+	/*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
+          ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
+    }//end main()
+>>>>>>> f2b602a8c117c24f64102ffdefe9ab7167d5944e
 
 }//end class ALStack
