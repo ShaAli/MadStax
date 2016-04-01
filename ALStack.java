@@ -1,31 +1,56 @@
-public class ALStack{
+/*****************************************************
+ * class ALStack
+ * Implements ADT Stack, generically typed.
+ * Uses an ArrayList as underlying container.
+ *****************************************************/
 
-    private T [] _stack;
-    private int _stackSize;
+import java.util.ArrayList;
 
+
+public class ALStack<T> implements Stack<T> {
+
+    private ArrayList<T> _stack;
 
     //constructor
-    public Latkes() 
-	{ 
-	    //typecasting hard to avoid here:
-	    _stack = ( T[] )new Object[42]; 
-	    //...
+    public ALStack() { 
+	_stack = new ArrayList<T>();
+    }
+
+    public ALStack( int size ) { 
+	_stack = new ArrayList<T>(size);
     }
 
 
-    //overloaded constructor allows for intial capacity declaration
-    public Latkes( int size ) 
-	{ 
+    //means of insertion
+    public void push( T s ) {  _stack.add(s);  }
 
+
+    //means of viewing top element without removing
+    public T peek( ) { 
+	T retVal = null;
+	if ( isEmpty() )  return null;
+	retVal = _stack.get( _stack.size()-1 );
+	return retVal;
     }
+
+
+    //means of removal
+    public T pop( ) { 
+	T retVal = null;
+	if ( isEmpty() )  return null;
+	retVal = _stack.remove( _stack.size()-1 );
+	return retVal;
+    }
+
+
+    //chk for emptiness
+    public boolean isEmpty() { 	return _stack.size() == 0;  }
 
 
     //main method for testing
     public static void main( String[] args ) {
 
-	/*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
-
-	Latkes<String> tastyStack = new Latkes<String>(10);
+	Stack<String> tastyStack = new ALStack<String>();
 
 	tastyStack.push("aoo");
 	tastyStack.push("boo");
@@ -81,7 +106,6 @@ public class ALStack{
 	System.out.println( "peek: " + tastyStack.peek() );
 	System.out.println( "pop: " + tastyStack.pop() );
 	System.out.println( tastyStack.pop() );
-          ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
-    }//end main()
+    }
 
-}//end class Latkes
+}//end class ALStack
