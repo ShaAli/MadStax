@@ -5,10 +5,10 @@
 
 /*****************************************************
  * class LLStack
- * Implements ADT Stack, generically typed.
- * Uses an ArrayList as underlying container.
+ * Implements ADT stack as specified in local Stack.java
+ * Generically typed
+ * Uses a LinkedList as underlying container
  *****************************************************/
-
 import java.util.LinkedList;
 
 
@@ -22,14 +22,6 @@ public class LLStack<T> implements Stack<T> {
 	_stack = new LinkedList<T>();
 	_stackSize = 0;
     }
-
-    /*************************************************
-Should we have another constructor?????????????
-    *************************************************/
-    /*  public LLStack( int size ) { 
-	_stack = new LinkedList<T>(size);
-	}*/
-
 
     //means of insertion
     public void push( T s ) {  
