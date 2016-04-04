@@ -1,4 +1,4 @@
-//Team ____ Shanjeed ALi and Gabriel Marks
+//Team ____ -- Shanjeed Ali and Gabriel Marks
 //APCS2 pd10
 //HW25 -- Brits Do Not Wait In Line
 //2016-04-05
@@ -42,7 +42,7 @@ public class LLQueue<T> implements Queue<T> {
 	}
 	
 	tmp.setNext( new LLNode(enQVal, _end));
-    }//O(?)
+    }//O(n)
 
 
     // means of removing a thing from the collection
@@ -56,7 +56,7 @@ public class LLQueue<T> implements Queue<T> {
 	T ret = _front.getNext().getValue();
 	_front.setNext(_front.getNext().getNext());
 	return ret;
-    }//O(?)
+    }//O(1)
 
 
     // means of peeking at thing next in line for removal
@@ -64,13 +64,13 @@ public class LLQueue<T> implements Queue<T> {
     {
 	T ret = _front.getNext().getValue();
 	return ret;
-    }//O(?)
+    }//O(1)
 
 
     public boolean isEmpty() 
     {
 	return (_front.getNext().equals(_end));
-    }//O(?)
+    }//O(1)
 
 
     // print each node, separated by spaces
@@ -85,7 +85,7 @@ public class LLQueue<T> implements Queue<T> {
 	}
 	return ret;
 
-    }//O(?)
+    }//O(n)
 
 
 
