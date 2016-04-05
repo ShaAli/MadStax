@@ -1,4 +1,4 @@
-//Team ____ -- Shanjeed Ali and Gabriel Marks
+//Team Queuebed -- Shanjeed Ali and Gabriel Marks
 //APCS2 pd10
 //HW25 -- Brits Do Not Wait In Line
 //2016-04-05
